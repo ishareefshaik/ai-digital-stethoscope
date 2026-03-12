@@ -626,12 +626,40 @@ export default function DigitalStethoscopePipeline() {
               PCG ACQUISITION → ARTIFACT REJECTION → SEGMENTATION → CNN CLASSIFICATION → FHIR OUTPUT
             </p>
           </div>
-          <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-            {phase === "recording" && <span style={{ fontSize: 10, color: COLORS.pulse, animation: "blink 1s infinite", fontFamily: "monospace" }}>● RECORDING</span>}
-            {phase === "processing" && <span style={{ fontSize: 10, color: COLORS.warn, animation: "blink 0.7s infinite", fontFamily: "monospace" }}>⚙ PROCESSING</span>}
-            {phase === "done" && <Badge text="ANALYSIS COMPLETE" type="normal" />}
           </div>
-        </div>
+
+          {/* Author Badge */}
+          <div style={{
+            display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6,
+          }}>
+            <div style={{
+              padding: "6px 14px", borderRadius: 8,
+              background: "linear-gradient(135deg, #00e5ff18, #7b61ff18)",
+              border: "1px solid #00e5ff44",
+              boxShadow: "0 0 16px #00e5ff22",
+            }}>
+              <div style={{ fontSize: 9, color: "#5a6a85", fontFamily: "monospace", letterSpacing: 2, marginBottom: 2 }}>
+                BUILT BY
+              </div>
+              <div style={{
+                fontSize: 14, fontWeight: 700,
+                fontFamily: "'Space Grotesk', sans-serif",
+                background: "linear-gradient(90deg, #00e5ff, #7b61ff, #ff2d55)",
+                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+                letterSpacing: 0.5,
+              }}>
+                Mahaboob Shareef Shaik
+              </div>
+              <div style={{ fontSize: 9, color: "#5a6a85", fontFamily: "monospace", letterSpacing: 1, marginTop: 2 }}>
+                AI ENGINEER · CARDIOLOGY DOMAIN
+              </div>
+            </div>
+            <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+              {phase === "recording" && <span style={{ fontSize: 10, color: "#ff2d55", animation: "blink 1s infinite", fontFamily: "monospace" }}>● RECORDING</span>}
+              {phase === "processing" && <span style={{ fontSize: 10, color: "#ffaa00", animation: "blink 0.7s infinite", fontFamily: "monospace" }}>⚙ PROCESSING</span>}
+              {phase === "done" && <Badge text="ANALYSIS COMPLETE" type="normal" />}
+            </div>
+          </div>
 
         {/* Pipeline Visual */}
         <Card style={{ marginBottom: 20 }}>
