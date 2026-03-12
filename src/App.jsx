@@ -626,7 +626,6 @@ export default function DigitalStethoscopePipeline() {
               PCG ACQUISITION → ARTIFACT REJECTION → SEGMENTATION → CNN CLASSIFICATION → FHIR OUTPUT
             </p>
           </div>
-         </div>
 
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6 }}>
             <div style={{
