@@ -626,12 +626,9 @@ export default function DigitalStethoscopePipeline() {
               PCG ACQUISITION → ARTIFACT REJECTION → SEGMENTATION → CNN CLASSIFICATION → FHIR OUTPUT
             </p>
           </div>
-          </div>
+         </div>
 
-          {/* Author Badge */}
-          <div style={{
-            display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6,
-          }}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6 }}>
             <div style={{
               padding: "6px 14px", borderRadius: 8,
               background: "linear-gradient(135deg, #00e5ff18, #7b61ff18)",
@@ -655,11 +652,23 @@ export default function DigitalStethoscopePipeline() {
               </div>
             </div>
             <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-              {phase === "recording" && <span style={{ fontSize: 10, color: "#ff2d55", animation: "blink 1s infinite", fontFamily: "monospace" }}>● RECORDING</span>}
-              {phase === "processing" && <span style={{ fontSize: 10, color: "#ffaa00", animation: "blink 0.7s infinite", fontFamily: "monospace" }}>⚙ PROCESSING</span>}
+              {phase === "recording" && <span style={{ fontSize: 10, color: COLORS.pulse, animation: "blink 1s infinite", fontFamily: "monospace" }}>● RECORDING</span>}
+              {phase === "processing" && <span style={{ fontSize: 10, color: COLORS.warn, animation: "blink 0.7s infinite", fontFamily: "monospace" }}>⚙ PROCESSING</span>}
               {phase === "done" && <Badge text="ANALYSIS COMPLETE" type="normal" />}
             </div>
           </div>
+```
+
+---
+
+### Visual guide — where it sits in the file:
+```
+Header section
+├── Left side: 🩺 title + subtitle        ← don't touch
+└── Right side: status badges             ← THIS is what you're replacing
+                     ↓
+               Right side: BUILT BY badge + status badges   ← new version
+        </div>
 
         {/* Pipeline Visual */}
         <Card style={{ marginBottom: 20 }}>
