@@ -656,17 +656,8 @@ export default function DigitalStethoscopePipeline() {
               {phase === "done" && <Badge text="ANALYSIS COMPLETE" type="normal" />}
             </div>
           </div>
-```
 
----
 
-### Visual guide — where it sits in the file:
-```
-Header section
-├── Left side: 🩺 title + subtitle        ← don't touch
-└── Right side: status badges             ← THIS is what you're replacing
-                     ↓
-               Right side: BUILT BY badge + status badges   ← new version
         </div>
 
         {/* Pipeline Visual */}
